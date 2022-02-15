@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>The comments are:</h1>
+    <ul>
+
+       
+    <%   for(let c of comments){%>
+        <section>
+        <li><strong>Comment: </strong><%=c.comment%></li>
+           <li> <strong>Name: </strong><%=c.username%></li>
+           <a href="/adminSide/953f2aeb-6b36-439c-bca8-2f2717058887/211-953f2aeb-6b36-439c-bca8-2f2717058887/admin/<%=c.id%>">  <button >Details</button></a>
+        
+         
+        </section>
+        <hr> 
+        
+      <% }%>
+   <section>
+    <a href="/comments/new">  <button >New Comment</button></a>
+   </section>
+   </ul>
+</body>
+</html>

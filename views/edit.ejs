@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit the comment here</h1>
+    <section>
+        <h2>Previous Details</h2>
+        <li><strong>Id : </strong><%= comment.id%></li>
+        <li><strong>Username : </strong><%=comment.username%></li>
+        <li><strong>Comment : </strong><%= comment.comment%></li>
+
+    </section>
+
+    <form action="/adminSide/953f2aeb-6b36-439c-bca8-2f2717058887/211-953f2aeb-6b36-439c-bca8-2f2717058887/admin/<%=comment.id%>?_method=PATCH" method="post">
+    <section>
+        <label for="comment">Enter the new Comment</label><br>
+        <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+    </section>
+   <a href="/comments"> <button type="submit">Comment</button></a>
+    </form>
+</body>
+</html>

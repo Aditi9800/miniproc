@@ -1,0 +1,99 @@
+<%- include("./header.ejs")%>
+<body>
+  <!-- <section>
+    <div class="skewed"></div>
+  </section> -->
+    <div class="container ">
+        <%- include("./navBar.ejs")%>
+    <%- include("./showForm.ejs")%>
+
+
+<br><br>
+
+
+  
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Comment Box</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+
+
+
+            <form action="/show-blog" method="post">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+                 
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Enter Comment Here</label><br>
+                  <textarea name="comment" id="exampleInputPassword1" cols="60" rows="5"></textarea>
+                </div>
+               
+              <a href="/show-blog"> <button type="submit" class="btn btn-primary">Submit</button></a> 
+              </form>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+<hr>
+
+
+<div class="card"  id="commentBox">
+    <h5 class="card-header">Comments</h5>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+       <strong>Click to Comment</strong> 
+      </button>
+      <hr>
+      
+<%   for(let c of comments){%>
+  
+    
+       
+
+       
+        <div class="card-body">
+          <h5 class="card-title" style="text-decoration: underline;"><i class="material-icons" style="font-size:30px;color:black;">person_outline</i>
+          <strong> <%=c.username%> </strong> </h5>  
+          <div style="background-color: rgb(193, 188, 188);">
+          <p class="card-text" style="font-size:18px;color:black;text-align: left; margin-left: 100px;"><%=c.comment%>.</p>
+        </div>
+          <hr>
+     
+        </div>
+    
+    
+   
+    
+  <% }%>
+</div>
+
+
+
+<hr>
+
+
+<br><br>
+    <%- include("./footer.ejs")%>
+</div>
+    
+</body>
+</html>

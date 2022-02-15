@@ -1,0 +1,193 @@
+
+
+
+
+<div class="row mb-2">
+  
+<div class="heading">
+ <h1>Jobs List</h1> 
+</div>
+  <% if(items.length>0){%>
+    <% items.forEach(item => {%>
+
+      <div class="col-md-6">
+       
+   
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success"><%=item.jobtype%></strong>
+            
+            <a href="/items/<%= item._id%>" style="text-decoration: none;"> <h2 class="blog-post-title">Title : <%= item.title%></h2>
+            <div class="mb-1 text-muted"><%=item.createdAt%></div>
+            <p class="blog-post-meta" style="color: black;">Subject : <%= item.subject%> </p></a>
+            
+          </div>
+          
+        </div>
+      </div>
+
+
+
+     
+         <%  });%>
+       <%  } else{%>
+            <p>there is nothing to show</p>
+       <%  }%>
+
+
+
+  
+</div>
+  
+
+
+<div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+      Jobs News.
+      </h3>
+
+
+      
+
+    
+       <% if(items.length>0){%>
+   <% items.forEach(item => {%>
+    <div class="container"></div>
+        <div class="blog-post">
+       <a href="/itemsnews/<%= item._id%>"  style="text-decoration: none;"> <h2 class="blog-post-title" id="newsHead" style="color: black;"> <%= item.headline%></h2>
+        <p class="blog-post-meta" id="newsHead" style="color:grey;"> <%= item.newshead%> </p></a>
+
+
+        <hr>
+        </div> 
+        <%  });%>
+      <%  } else{%>
+           <p>there is nothing to show</p>
+      <%  }%>
+
+
+     
+   
+<br>
+
+<% if(items.length>0){%>
+  <% items.forEach(item => {%>
+   <div class="container"></div>
+       <div class="blog-post">
+          
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong><%= item.ads%></strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  
+      <a href="/"  style="text-decoration: none;"> <h2 class="blog-post-title" id="newsHead" style="color: black;"> <%= item.updatehead%></h2>
+       <p class="blog-post-meta" id="newsHead" style="color:grey;"> <%= item.updatesub%> </p>
+       <pre class="blog-post-meta" id="newsHead" style="color:grey;text-align: left;  white-space: pre-wrap;"> <%= item.updatedes%> </pre></a>
+
+
+       <hr>
+       </div> 
+      </div>
+       <%  });%>
+     <%  } else{%>
+          <p style="color: white;">.</p>
+     <%  }%>
+
+
+
+<article class="blog-post">
+  <h2 class="blog-post-title">Job Counts</h2>
+ 
+  <h3>Premium Jobs</h3>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Hurry!</strong> Apply For the Subsicribe to the winter sale and apply for the below listed Jobs.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <p>Apply For the Pemium Jobs</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Organization </th>
+        <th>Full Time Offers </th>
+        <th>Internship Offers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(items.length>0){%>
+        <% items.forEach(item => {%>
+         
+     
+             <tr>
+              <td><%= item.company%></td>
+              <td><%= item.fulltime%></td>
+              <td><%= item.intern%></td>
+            </tr>
+            
+             <%  });%>
+           <%  } else{%>
+            <tr>
+              <td>No data</td>
+              <td>No data</td>
+              <td>No data</td>
+            </tr>
+           <%  }%>
+        
+
+      
+     
+    </tbody>
+    
+  </table>
+
+  <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+</article>
+      
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">About</h4>
+      
+        
+        
+            <p class="mb-0">Hello this welcome to Jobs Fair. This is one Place Solution For all the Jobs and internships.
+              
+            </p>
+    
+       
+         
+          
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            
+            
+       <% if(items.length>0){%>
+        <% items.forEach(item => {%>
+             <div class="blog-post">
+            <a href="/items/<%= item._id%>"> 
+              
+              <li><%= item.createdAt%></li>
+             </a>
+             
+     
+             <hr>
+             </div> 
+             <%  });%>
+           <%  } else{%>
+                <p>No Archives</p>
+           <%  }%>
+        
+          </ol>
+        </div>
+
+      
+      </div>
+    </div>
+  </div>
+
+ 

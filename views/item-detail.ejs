@@ -1,0 +1,41 @@
+<%- include("./header.ejs")%>
+<body>
+    
+    <div class="container">
+        <%- include("./navBar.ejs")%>
+
+
+
+       
+
+          
+          <div class="card text-center">
+            <div class="card-header" >
+               <h2 style="font-weight: bold;"><%=item.title%></h2> 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Subject : <%=item.subject%></h5>
+              <hr>
+            
+              <pre class="card-text" style="text-align: left;  white-space: pre-wrap; font-size: 20px;font-weight: bold;">Description : <%= item.description%>.</pre>
+              
+              <a href="/" class="btn btn-primary">Home</a>
+             
+              <a href="<%= item.link %>" class="btn btn-primary">Apply</a>
+              
+            </div>
+            <div class="card-footer text-muted">
+                <%= item.createdAt%>
+            </div>
+          </div>
+         
+          <br><br><br>
+         
+
+   
+
+    <%- include("./footer.ejs")%>
+</div>
+    
+</body>
+</html>

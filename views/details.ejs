@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Comment details</h1>
+    <ul>
+        <li><strong>Id: </strong><%=comment.id%></li>
+<li><strong>Comment: </strong><%=comment.comment%></li>
+<li><strong>Username: </strong><%=comment.username%></li>
+<a href="/adminSide/953f2aeb-6b36-439c-bca8-2f2717058887/211-953f2aeb-6b36-439c-bca8-2f2717058887/admin/<%=comment.id%>/edit">  <button >Edit</button></a>
+<form action="/adminSide/953f2aeb-6b36-439c-bca8-2f2717058887/211-953f2aeb-6b36-439c-bca8-2f2717058887/admin/<%=comment.id%>?_method=DELETE" method="post">
+<section>
+    <a href="/comments">  <button type="submit">Delete</button></a>
+</section>
+</form>
+    </ul>
+</body>
+</html>
